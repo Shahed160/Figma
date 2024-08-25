@@ -63,15 +63,40 @@ function calculate(){
     if(operation.value==='/'){
         result.innerHTML=parseInt(numberInput.value)/parseInt(numberInput2.value)
     }
-    var choosingNumber=document.getElementById('numberInput11') 
-       var result2=document.getElementById("result2")
-    function Prime(){
-       
-       for(let i=2;i<Math.sqrt(choosingNumber);i+=2){
-     if(choosingNumber%i===0){
-    result2.innerHTML=false;
+   
+}
 
-       }
-       else result2.innerHTML=true;}
+function Prime(){
+    var choosingNumber=document.getElementById('numberInput11').value
+var result2=document.getElementById("result2")
+console.log(10)
+console.log(choosingNumber)
+for(let i=2;i<parseInt(choosingNumber);i++){
+    console.log("shahed")
+if(choosingNumber%i===0){
+result2.innerHTML=false;
+console.log(false)
+}
+else {result2.innerHTML=true
+console.log(true)};
+}
+
+}
+var items=document.getElementsByClassName('items')
+console.log(items)
+var searchInput=document.getElementById("searchInput")
+searchInput.addEventListener('input',function(){
+    console.log(searchInput.value)
+for(var i=0;i<items.length;i++){
+    items[i].style.display='block'
+    for(var j=0;j<searchInput.value.length;j++){
+        if(items[i].innerHTML[j]==searchInput.value[j]){
+            console.log(items[i].innerHTML[j])
+        }
+        else{
+            items[i].style.display='none'
+        }
+
     }
 }
+})
